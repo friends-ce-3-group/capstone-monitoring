@@ -21,6 +21,6 @@ jobs:
 
       - run: ls
 
-    #   - run: |
-    #       chmod 744 ${{ github.workspace }}/backup.sh
+      - run: |
+          chmod 744 backup.sh
     #       ${{ github.workspace }}/backup.sh

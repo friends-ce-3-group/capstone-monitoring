@@ -19,6 +19,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - run: |
-          chmod 744 ${{ github.workspace }}/backup.sh
-          ${{ github.workspace }}/backup.sh
+      - run: ls
+
+    #   - run: |
+    #       chmod 744 ${{ github.workspace }}/backup.sh
+    #       ${{ github.workspace }}/backup.sh

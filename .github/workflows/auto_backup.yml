@@ -27,4 +27,4 @@ jobs:
           sudo chmod u+x backup.sh
           ls -la
 
-      - run: ./backup.sh
+      - run: ${{ github.workspace }}/backup.sh

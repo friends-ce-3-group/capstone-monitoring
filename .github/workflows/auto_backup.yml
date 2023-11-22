@@ -26,5 +26,8 @@ jobs:
           sed -i -e 's/\r$//' backup.sh
           sudo chmod u+x backup.sh
           ls -la
+          
 
-      - run: ${{ github.workspace }}/backup.sh
+      - run: |
+          pwd
+          ${{ github.workspace }}/backup.sh

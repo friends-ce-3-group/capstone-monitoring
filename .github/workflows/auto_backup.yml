@@ -19,11 +19,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - run: ls
-
       - name: change permissions of script
         run: |
           sudo chmod u+x backup.sh
           ls -la
-        
-      - run: backup.sh
+
+
+      - uses: chrislennon/action-aws-cli@v1.1
+
+      - run: ./backup.sh

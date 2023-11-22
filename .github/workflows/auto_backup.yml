@@ -24,7 +24,4 @@ jobs:
           sudo chmod u+x backup.sh
           ls -la
 
-
-      - uses: chrislennon/action-aws-cli@v1.1
-
       - run: ./backup.sh

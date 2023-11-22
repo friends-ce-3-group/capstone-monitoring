@@ -15,4 +15,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - run: aws cloudwatch get-dashboard --region us-west-2 --dashboard-name friends-capstone-temporary-RDS
+      - run: |
+          chmod 744 ./backup.sh
+          ./backup.sh

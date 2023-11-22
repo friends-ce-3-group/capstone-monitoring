@@ -20,5 +20,5 @@ jobs:
         uses: actions/checkout@v4
 
       - run: |
-          chmod 744 ./backup.sh
-          ./backup.sh
+          chmod 744 ${{ github.workspace }}/backup.sh
+          ${{ github.workspace }}/backup.sh

@@ -22,7 +22,7 @@ jobs:
       - run: ls
 
       - name: change permissions of script
-        run: 
+        run: |
           sudo chmod u+x backup.sh
           ls -la
         

@@ -21,6 +21,7 @@ jobs:
 
       - run: ls
 
-      - run: |
-          chmod 744 backup.sh
-          backup.sh
+      - name: change permissions of script
+        run: sudo chmod u+x backup.sh
+        
+    #   - run: backup.sh

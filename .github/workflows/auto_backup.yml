@@ -23,4 +23,4 @@ jobs:
 
       - run: |
           chmod 744 backup.sh
-    #       ${{ github.workspace }}/backup.sh
+          backup.sh

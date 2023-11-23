@@ -1,22 +1,19 @@
-import subprocess
 import json
+import argparse
 
-dashboards = [
- 'friends-capstone-temporary-RDS'
-]
+parser = argparse.ArgumentParser(description='get input')
+parser.add_argument('--json_file', type=str, help='path to json file')
 
-for dashboard in dashboards:
-    print("running")
-    stdout = subprocess.check_output(["cmd", "/c", 'aws', 'cloudwatch', 'get-dashboard', 
-                            '--region', 'us-west-2',
-                            '--dashboard-name', dashboard, 
-                            '|', 'jq', '.DashboardBody'])
+def json_process(path):
+    with open(path, "r") as f:
+        raw = json.load(f)
+        data = json.loads(raw)
 
+    with open(path, "w") as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
 
-    parsed = json.loads(stdout.decode())
-    # print(parsed)
-    print(json.dumps(parsed, ensure_ascii=False, indent=4))
+if __name__ == "__main__":
+    args = parser.parse_args()
+    json_process(args.json_file)
 
-    # with open(r"D:/repos/learning/friends-ce-3-group/capstone-monitoring/test_out.json", "w") as f:
-    #     json.dumps(parsed, f, ensure_ascii=False, indent=4)
 

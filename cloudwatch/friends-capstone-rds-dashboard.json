@@ -1,0 +1,156 @@
+{
+    "widgets": [
+        {
+            "height": 6,
+            "width": 6,
+            "y": 0,
+            "x": 0,
+            "type": "log",
+            "properties": {
+                "query": "SOURCE '/ecs/friends-capstone-cluster/friends-capstone-crud-api-service' | SOURCE '/ecs/friends-capstone-thumbnails-api-ecs-task' | fields @timestamp, @message, @logStream, @log\n| filter @message like /(?i)Can't connect to MySQL server/ \n| sort @timestamp asc\n| stats count() by bin(1h)\n| limit 10000",
+                "region": "us-west-2",
+                "stacked": false,
+                "title": "RDS - CardDB - ConnectionErrors",
+                "view": "bar"
+            }
+        },
+        {
+            "height": 6,
+            "width": 6,
+            "y": 0,
+            "x": 6,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "DatabaseConnections",
+                        "DBInstanceIdentifier",
+                        "friendscapstonerds",
+                        {
+                            "period": 60
+                        }
+                    ]
+                ],
+                "region": "us-west-2",
+                "title": "RDS - CardDB - ConnectionCount"
+            }
+        },
+        {
+            "height": 6,
+            "width": 6,
+            "y": 0,
+            "x": 12,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "title": "RDS - CardDB - CPU Utilization",
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "CPUUtilization",
+                        "DBInstanceIdentifier",
+                        "friendscapstonerds",
+                        {
+                            "period": 60
+                        }
+                    ]
+                ],
+                "region": "us-west-2"
+            }
+        },
+        {
+            "height": 6,
+            "width": 6,
+            "y": 6,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "ReadIOPS",
+                        "DBInstanceIdentifier",
+                        "friendscapstonerds",
+                        {
+                            "period": 60
+                        }
+                    ],
+                    [
+                        ".",
+                        "WriteIOPS",
+                        ".",
+                        ".",
+                        {
+                            "period": 60
+                        }
+                    ]
+                ],
+                "region": "us-west-2",
+                "title": "RDS - CardDB - ReadWriteIOPs"
+            }
+        },
+        {
+            "height": 6,
+            "width": 6,
+            "y": 6,
+            "x": 6,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "WriteLatency",
+                        "DBInstanceIdentifier",
+                        "friendscapstonerds",
+                        {
+                            "period": 60
+                        }
+                    ],
+                    [
+                        ".",
+                        "ReadLatency",
+                        ".",
+                        ".",
+                        {
+                            "period": 60
+                        }
+                    ]
+                ],
+                "region": "us-west-2",
+                "title": "RDS - CardDB - ReadWriteLatency"
+            }
+        },
+        {
+            "height": 6,
+            "width": 6,
+            "y": 6,
+            "x": 12,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "FreeStorageSpace",
+                        "DBInstanceIdentifier",
+                        "friendscapstonerds",
+                        {
+                            "period": 60
+                        }
+                    ]
+                ],
+                "region": "us-west-2",
+                "title": "RDS - CardDB - FreeStorageSpace"
+            }
+        }
+    ]
+}

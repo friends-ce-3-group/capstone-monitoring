@@ -10,6 +10,8 @@ env:
 jobs:
   backup:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     defaults:
       run:
@@ -28,5 +30,12 @@ jobs:
       - name: backup dashboards
         run: ./backup.sh
       
-      - name: lists files
+      - name: list files
         run : ls *.json
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: backup dashboards
+          file_pattern: '*.json'
+          repository: .
+          push_options: '--force'

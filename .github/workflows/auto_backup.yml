@@ -19,15 +19,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-
-
-      - name: change permissions of script
+      - name: make script executable
         run: |
           sed -i -e 's/\r$//' backup.sh
           sudo chmod u+x backup.sh
           ls -la
           
-
-      - run: |
-          pwd
-          ${{ github.workspace }}/backup.sh
+      - name: backup dashboards
+        run: ./backup.sh
+      
+      - name: show file
+        run : ls

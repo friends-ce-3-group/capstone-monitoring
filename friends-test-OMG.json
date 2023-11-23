@@ -1,0 +1,1347 @@
+{
+    "widgets": [
+        {
+            "height": 5,
+            "width": 7,
+            "y": 0,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/ECS",
+                        "CPUUtilization",
+                        "ServiceName",
+                        "friends-capstone-crud-api-service",
+                        "ClusterName",
+                        "friends-capstone-cluster"
+                    ]
+                ],
+                "view": "gauge",
+                "region": "us-west-2",
+                "stat": "Average",
+                "period": 86400,
+                "start": "-PT168H",
+                "end": "P0D",
+                "yAxis": {
+                    "left": {
+                        "max": 0.05,
+                        "min": 0
+                    }
+                },
+                "legend": {
+                    "position": "bottom"
+                },
+                "annotations": {
+                    "horizontal": [
+                        {
+                            "color": "#9467bd",
+                            "label": "Untitled annotation",
+                            "value": 0,
+                            "fill": "above"
+                        }
+                    ]
+                },
+                "liveData": false,
+                "setPeriodToTimeRange": true,
+                "sparkline": false,
+                "trend": false,
+                "title": "ECS -  Card CRUD APIs - CPUUtilization"
+            }
+        },
+        {
+            "height": 5,
+            "width": 6,
+            "y": 0,
+            "x": 14,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "CPUUtilization",
+                        "DBInstanceIdentifier",
+                        "friendscapstonerds",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "WriteLatency",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "LVMWriteIOPS",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "FreeStorageSpace",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "BurstBalance",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "ReadThroughput",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "DiskQueueDepth",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "NetworkReceiveThroughput",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "BinLogDiskUsage",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "ReadLatency",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "WriteThroughput",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "LVMReadIOPS",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "SwapUsage",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "WriteIOPS",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "FreeableMemory",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "NetworkTransmitThroughput",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "ReadIOPS",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "DatabaseConnections",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "DBLoad",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ],
+                    [
+                        ".",
+                        "DBLoadCPU",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ],
+                    [
+                        ".",
+                        "DBLoadNonCPU",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "EBSByteBalance%",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CPUCreditUsage",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CPUSurplusCreditBalance",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "EBSIOBalance%",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CPUCreditBalance",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CPUSurplusCreditsCharged",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "BinLogDiskUsage",
+                        ".",
+                        "terraform-20231107152433165800000001",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "DatabaseConnections",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "LVMReadIOPS",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "SwapUsage",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "WriteLatency",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "ReadLatency",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "DiskQueueDepth",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "ReadThroughput",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "NetworkReceiveThroughput",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "LVMWriteIOPS",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "FreeStorageSpace",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "NetworkTransmitThroughput",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CPUUtilization",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "BurstBalance",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "WriteThroughput",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "ReadIOPS",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "FreeableMemory",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "WriteIOPS",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "EBSByteBalance%",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "EBSIOBalance%",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CPUSurplusCreditBalance",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CPUCreditUsage",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CPUSurplusCreditsCharged",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CPUCreditBalance",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "WriteLatency",
+                        ".",
+                        "terraform-20231107163523965200000001",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "FreeableMemory",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "LVMReadIOPS",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "ReadIOPS",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "FreeStorageSpace",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "DatabaseConnections",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "NetworkReceiveThroughput",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "SwapUsage",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "BurstBalance",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "LVMWriteIOPS",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "ReadLatency",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "WriteIOPS",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "WriteThroughput",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CPUUtilization",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "BinLogDiskUsage",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "NetworkTransmitThroughput",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CPUCreditBalance",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CPUSurplusCreditBalance",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CPUCreditUsage",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CPUSurplusCreditsCharged",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "DiskQueueDepth",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "ReadThroughput",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "EBSIOBalance%",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "EBSByteBalance%",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "LVMWriteIOPS",
+                        ".",
+                        "terraform-20231108025942138300000001",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "WriteLatency",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "LVMReadIOPS",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "ReadThroughput",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "DiskQueueDepth",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "ReadIOPS",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "DatabaseConnections",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "NetworkReceiveThroughput",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "ReadLatency",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "BinLogDiskUsage",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "NetworkTransmitThroughput",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "WriteThroughput",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "WriteIOPS",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CPUSurplusCreditBalance",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "EBSIOBalance%",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "EBSByteBalance%",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CPUCreditBalance",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CPUCreditUsage",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CPUSurplusCreditsCharged",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "DBLoadNonCPU",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "DBLoad",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "DBLoadCPU",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "FreeStorageSpace",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "FreeableMemory",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "SwapUsage",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ]
+                ],
+                "view": "timeSeries",
+                "stacked": true,
+                "region": "us-west-2",
+                "period": 86400,
+                "stat": "Average"
+            }
+        },
+        {
+            "height": 5,
+            "width": 7,
+            "y": 0,
+            "x": 7,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/ApiGateway",
+                        "Latency",
+                        "ApiName",
+                        "friends-capstone-infra-s3-images-api-gateway",
+                        {
+                            "region": "us-west-2",
+                            "label": "API Gateway Latency"
+                        }
+                    ],
+                    [
+                        ".",
+                        "Count",
+                        ".",
+                        ".",
+                        {
+                            "visible": false,
+                            "region": "us-west-2"
+                        }
+                    ]
+                ],
+                "view": "gauge",
+                "region": "us-west-2",
+                "yAxis": {
+                    "left": {
+                        "min": 0,
+                        "max": 1000
+                    }
+                },
+                "stat": "Average",
+                "period": 300,
+                "title": "APi Gateway - UploadImages - Latency"
+            }
+        },
+        {
+            "height": 4,
+            "width": 20,
+            "y": 5,
+            "x": 0,
+            "type": "log",
+            "properties": {
+                "query": "SOURCE '/ecs/friends-capstone-thumbnails-api-ecs-task' | fields @timestamp, @message, @logStream, @log\n| sort @timestamp desc\n| limit 20",
+                "region": "us-west-2",
+                "stacked": false,
+                "view": "table"
+            }
+        },
+        {
+            "height": 5,
+            "width": 13,
+            "y": 9,
+            "x": 6,
+            "type": "metric",
+            "properties": {
+                "view": "table",
+                "stacked": true,
+                "metrics": [
+                    [
+                        "AWS/WAFV2",
+                        "AllowedRequests",
+                        "WebACL",
+                        "friends-capstone-regional-web-acl",
+                        "Device",
+                        "Desktop",
+                        "Region",
+                        "us-west-2",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ],
+                    [
+                        "AWS/WAFV2",
+                        "BlockedRequests",
+                        "WebACL",
+                        "friends-capstone-regional-web-acl",
+                        "Device",
+                        "Desktop",
+                        "Region",
+                        "us-west-2",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ]
+                ],
+                "region": "us-west-2",
+                "period": 300,
+                "start": "-PT168H"
+            }
+        },
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 9,
+            "width": 6,
+            "height": 5,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/WAFV2",
+                        "AllowedRequests",
+                        "WebACL",
+                        "friends-capstone-regional-web-acl",
+                        "Device",
+                        "Desktop",
+                        "Region",
+                        "us-west-2",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ],
+                    [
+                        ".",
+                        "BlockedRequests",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ],
+                    [
+                        ".",
+                        "CaptchaRequests",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ]
+                ],
+                "view": "timeSeries",
+                "stacked": true,
+                "region": "us-west-2",
+                "period": 86400,
+                "stat": "Average"
+            }
+        },
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 14,
+            "width": 6,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "CPUUtilization",
+                        "DBInstanceIdentifier",
+                        "friendscapstonerds",
+                        {
+                            "stat": "Average",
+                            "id": "m1",
+                            "visible": false,
+                            "region": "us-west-2"
+                        }
+                    ],
+                    [
+                        {
+                            "id": "e1",
+                            "expression": "AVG([m1])",
+                            "label": "Unlabeled",
+                            "region": "us-west-2"
+                        }
+                    ]
+                ],
+                "legend": {
+                    "position": "bottom"
+                },
+                "period": 86400,
+                "view": "timeSeries",
+                "stacked": false,
+                "title": "RDS- CPUUtilization",
+                "region": "us-west-2"
+            }
+        },
+        {
+            "type": "metric",
+            "x": 6,
+            "y": 14,
+            "width": 8,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/ApplicationELB",
+                        "HTTPCode_Target_4XX_Count",
+                        "LoadBalancer",
+                        "app/friends-capstone-ecs-alb/03132d8542c693d2",
+                        "AvailabilityZone",
+                        "us-west-2a",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "HTTPCode_Target_2XX_Count",
+                        ".",
+                        ".",
+                        ".",
+                        "us-west-2b",
+                        {
+                            "region": "us-west-2",
+                            "stat": "Maximum",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "NewConnectionCount",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "HTTPCode_Target_2XX_Count",
+                        ".",
+                        ".",
+                        {
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        ".",
+                        "HTTPCode_ELB_4XX_Count",
+                        ".",
+                        ".",
+                        {
+                            "stat": "Maximum"
+                        }
+                    ],
+                    [
+                        ".",
+                        "ActiveConnectionCount",
+                        ".",
+                        ".",
+                        {
+                            "stat": "Maximum"
+                        }
+                    ]
+                ],
+                "sparkline": false,
+                "view": "table",
+                "region": "us-west-2",
+                "stacked": true,
+                "yAxis": {
+                    "left": {
+                        "min": 0,
+                        "max": 15
+                    }
+                },
+                "stat": "Average",
+                "period": 300,
+                "setPeriodToTimeRange": true,
+                "trend": false
+            }
+        }
+    ]
+}

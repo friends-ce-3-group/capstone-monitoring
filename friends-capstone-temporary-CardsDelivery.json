@@ -1,0 +1,131 @@
+{
+    "widgets": [
+        {
+            "height": 6,
+            "width": 6,
+            "y": 0,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [
+                        "AWS/Lambda",
+                        "Invocations",
+                        "FunctionName",
+                        "friends-capstone-notification-lambda",
+                        {
+                            "region": "us-east-1"
+                        }
+                    ],
+                    [
+                        ".",
+                        "Errors",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-east-1"
+                        }
+                    ]
+                ],
+                "region": "us-east-1",
+                "title": "Lambda - CardsDelivery - Invoke vs Errors",
+                "period": 300
+            }
+        },
+        {
+            "height": 6,
+            "width": 6,
+            "y": 0,
+            "x": 17,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [
+                        "AWS/SES",
+                        "Send"
+                    ],
+                    [
+                        ".",
+                        "Delivery"
+                    ],
+                    [
+                        ".",
+                        "Bounce"
+                    ]
+                ],
+                "region": "us-east-1",
+                "title": "SES - CardsDelivery - Email"
+            }
+        },
+        {
+            "height": 6,
+            "width": 6,
+            "y": 0,
+            "x": 6,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [
+                        "AWS/Lambda",
+                        "Duration",
+                        "FunctionName",
+                        "friends-capstone-notification-lambda"
+                    ]
+                ],
+                "region": "us-east-1",
+                "title": "Lambda - CardsDelivery - Duration"
+            }
+        },
+        {
+            "height": 6,
+            "width": 5,
+            "y": 0,
+            "x": 12,
+            "type": "metric",
+            "properties": {
+                "sparkline": true,
+                "view": "singleValue",
+                "metrics": [
+                    [
+                        "AWS/Lambda",
+                        "Duration",
+                        "FunctionName",
+                        "friends-capstone-notification-lambda"
+                    ]
+                ],
+                "region": "us-east-1",
+                "title": "Lambda - CardsDelivery - Latest Duration"
+            }
+        },
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 6,
+            "width": 6,
+            "height": 6,
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [
+                        "AWS/Scheduler",
+                        "InvocationAttemptCount",
+                        "ScheduleGroup",
+                        "default",
+                        {
+                            "region": "us-east-1"
+                        }
+                    ]
+                ],
+                "region": "us-west-2",
+                "title": "Scheduler - CardsDelivery - OutstandingCards"
+            }
+        }
+    ]
+}

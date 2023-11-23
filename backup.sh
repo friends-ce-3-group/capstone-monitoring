@@ -3,3 +3,6 @@ body=$(aws cloudwatch get-dashboard --region us-west-2 --dashboard-name friends-
 echo $body
 echo "----------------------------"
 echo $body | python -m json.tool
+echo "----------------------------"
+formatted=$(echo $body | jq .)
+echo $formatted

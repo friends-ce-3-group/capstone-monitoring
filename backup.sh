@@ -4,5 +4,4 @@ echo $body
 echo "----------------------------"
 echo $body | python -m json.tool
 echo "----------------------------"
-formatted=$(echo $body | jq .)
-echo $formatted
+echo $body | jq .

@@ -2,6 +2,10 @@ name: Auto backup of Cloudwatch dashboards
 
 on:
   push:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 18 * * *" # SGT 2am / UTC 6pm
+  
 
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

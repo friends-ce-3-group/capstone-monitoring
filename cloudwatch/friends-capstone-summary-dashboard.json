@@ -250,11 +250,11 @@
             }
         },
         {
-            "type": "metric",
-            "x": 15,
-            "y": 10,
+            "height": 7,
             "width": 7,
-            "height": 4,
+            "y": 10,
+            "x": 15,
+            "type": "metric",
             "properties": {
                 "metrics": [
                     [
@@ -282,11 +282,11 @@
             }
         },
         {
-            "type": "metric",
-            "x": 15,
-            "y": 5,
-            "width": 7,
             "height": 5,
+            "width": 7,
+            "y": 5,
+            "x": 15,
+            "type": "metric",
             "properties": {
                 "metrics": [
                     [
@@ -364,11 +364,11 @@
             }
         },
         {
-            "type": "metric",
-            "x": 15,
-            "y": 0,
-            "width": 7,
             "height": 5,
+            "width": 7,
+            "y": 0,
+            "x": 15,
+            "type": "metric",
             "properties": {
                 "metrics": [
                     [

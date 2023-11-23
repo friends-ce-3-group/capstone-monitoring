@@ -1,3 +1,7 @@
+'''
+This script reads in raw json strings in a file, makes it pretty, and writes it out in the same file.
+'''
+
 import json
 import argparse
 

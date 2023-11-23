@@ -8,7 +8,14 @@
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ "AWS/ECS", "CPUUtilization", "ServiceName", "friends-capstone-crud-api-service", "ClusterName", "friends-capstone-cluster" ]
+                    [
+                        "AWS/ECS",
+                        "CPUUtilization",
+                        "ServiceName",
+                        "friends-capstone-crud-api-service",
+                        "ClusterName",
+                        "friends-capstone-cluster"
+                    ]
                 ],
                 "view": "gauge",
                 "region": "us-west-2",
@@ -50,8 +57,26 @@
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ "AWS/ApiGateway", "Latency", "ApiName", "friends-capstone-infra-s3-images-api-gateway", { "region": "us-west-2", "label": "API Gateway Latency" } ],
-                    [ ".", "Count", ".", ".", { "visible": false, "region": "us-west-2" } ]
+                    [
+                        "AWS/ApiGateway",
+                        "Latency",
+                        "ApiName",
+                        "friends-capstone-infra-s3-images-api-gateway",
+                        {
+                            "region": "us-west-2",
+                            "label": "API Gateway Latency"
+                        }
+                    ],
+                    [
+                        ".",
+                        "Count",
+                        ".",
+                        ".",
+                        {
+                            "visible": false,
+                            "region": "us-west-2"
+                        }
+                    ]
                 ],
                 "view": "gauge",
                 "region": "us-west-2",
@@ -90,9 +115,45 @@
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ "AWS/WAFV2", "AllowedRequests", "WebACL", "friends-capstone-regional-web-acl", "Device", "Desktop", "Region", "us-west-2", { "region": "us-west-2" } ],
-                    [ ".", "BlockedRequests", ".", ".", ".", ".", ".", ".", { "region": "us-west-2" } ],
-                    [ ".", "CaptchaRequests", ".", ".", ".", ".", ".", ".", { "region": "us-west-2" } ]
+                    [
+                        "AWS/WAFV2",
+                        "AllowedRequests",
+                        "WebACL",
+                        "friends-capstone-regional-web-acl",
+                        "Device",
+                        "Desktop",
+                        "Region",
+                        "us-west-2",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ],
+                    [
+                        ".",
+                        "BlockedRequests",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ],
+                    [
+                        ".",
+                        "CaptchaRequests",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ]
                 ],
                 "view": "singleValue",
                 "stacked": false,
@@ -116,9 +177,45 @@
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ "AWS/WAFV2", "CaptchaRequests", "WebACL", "friends-capstone-regional-web-acl", "Region", "us-west-2", "Rule", "api-gateway-captcha-rule-CONTENT-TYPE-IMAGE", { "region": "us-west-2" } ],
-                    [ ".", "AllowedRequests", ".", ".", ".", ".", ".", "api-gateway-captcha-rule", { "region": "us-west-2" } ],
-                    [ ".", "CaptchaRequests", ".", ".", ".", ".", ".", "api-gateway-upload-images-put-method", { "region": "us-west-2" } ]
+                    [
+                        "AWS/WAFV2",
+                        "CaptchaRequests",
+                        "WebACL",
+                        "friends-capstone-regional-web-acl",
+                        "Region",
+                        "us-west-2",
+                        "Rule",
+                        "api-gateway-captcha-rule-CONTENT-TYPE-IMAGE",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ],
+                    [
+                        ".",
+                        "AllowedRequests",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        "api-gateway-captcha-rule",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ],
+                    [
+                        ".",
+                        "CaptchaRequests",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        "api-gateway-upload-images-put-method",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ]
                 ],
                 "sparkline": true,
                 "view": "bar",

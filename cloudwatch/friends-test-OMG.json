@@ -1,0 +1,304 @@
+{
+    "widgets": [
+        {
+            "height": 5,
+            "width": 7,
+            "y": 0,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/ECS",
+                        "CPUUtilization",
+                        "ServiceName",
+                        "friends-capstone-crud-api-service",
+                        "ClusterName",
+                        "friends-capstone-cluster"
+                    ]
+                ],
+                "view": "gauge",
+                "region": "us-west-2",
+                "stat": "Average",
+                "period": 86400,
+                "start": "-PT168H",
+                "end": "P0D",
+                "yAxis": {
+                    "left": {
+                        "max": 0.05,
+                        "min": 0
+                    }
+                },
+                "legend": {
+                    "position": "bottom"
+                },
+                "annotations": {
+                    "horizontal": [
+                        {
+                            "color": "#9467bd",
+                            "label": "Untitled annotation",
+                            "value": 0,
+                            "fill": "above"
+                        }
+                    ]
+                },
+                "liveData": false,
+                "setPeriodToTimeRange": true,
+                "sparkline": false,
+                "trend": false,
+                "title": "ECS - Card CRUD APIs - CPUUtilization"
+            }
+        },
+        {
+            "height": 5,
+            "width": 6,
+            "y": 0,
+            "x": 7,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/ApiGateway",
+                        "Latency",
+                        "ApiName",
+                        "friends-capstone-infra-s3-images-api-gateway",
+                        {
+                            "region": "us-west-2",
+                            "label": "API Gateway Latency"
+                        }
+                    ],
+                    [
+                        ".",
+                        "Count",
+                        ".",
+                        ".",
+                        {
+                            "visible": false,
+                            "region": "us-west-2"
+                        }
+                    ]
+                ],
+                "view": "gauge",
+                "region": "us-west-2",
+                "yAxis": {
+                    "left": {
+                        "min": 0,
+                        "max": 1000
+                    }
+                },
+                "stat": "Average",
+                "period": 300,
+                "title": "API Gateway - Upload Images Latency",
+                "start": "-PT1008H",
+                "end": "P0D"
+            }
+        },
+        {
+            "height": 4,
+            "width": 20,
+            "y": 12,
+            "x": 0,
+            "type": "log",
+            "properties": {
+                "query": "SOURCE '/ecs/friends-capstone-thumbnails-api-ecs-task' | fields @timestamp, @message, @logStream, @log\n| sort @timestamp desc\n| limit 20",
+                "region": "us-west-2",
+                "stacked": false,
+                "view": "table",
+                "title": "Logs - ECS "
+            }
+        },
+        {
+            "height": 7,
+            "width": 4,
+            "y": 5,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/WAFV2",
+                        "AllowedRequests",
+                        "WebACL",
+                        "friends-capstone-regional-web-acl",
+                        "Device",
+                        "Desktop",
+                        "Region",
+                        "us-west-2",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ],
+                    [
+                        ".",
+                        "BlockedRequests",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ],
+                    [
+                        ".",
+                        "CaptchaRequests",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ]
+                ],
+                "view": "singleValue",
+                "stacked": false,
+                "region": "us-west-2",
+                "period": 86400,
+                "stat": "Sum",
+                "start": "-PT1008H",
+                "end": "P0D",
+                "singleValueFullPrecision": true,
+                "setPeriodToTimeRange": false,
+                "sparkline": false,
+                "trend": true,
+                "title": "WAF - Allowed, Blocked & Captcha Requests"
+            }
+        },
+        {
+            "height": 7,
+            "width": 9,
+            "y": 5,
+            "x": 4,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/WAFV2",
+                        "CaptchaRequests",
+                        "WebACL",
+                        "friends-capstone-regional-web-acl",
+                        "Region",
+                        "us-west-2",
+                        "Rule",
+                        "api-gateway-captcha-rule-CONTENT-TYPE-IMAGE",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ],
+                    [
+                        ".",
+                        "AllowedRequests",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        "api-gateway-captcha-rule",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ],
+                    [
+                        ".",
+                        "CaptchaRequests",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        "api-gateway-upload-images-put-method",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ]
+                ],
+                "sparkline": true,
+                "view": "bar",
+                "region": "us-west-2",
+                "start": "-PT1008H",
+                "end": "P0D",
+                "stat": "Sum",
+                "period": 21600,
+                "stacked": true,
+                "singleValueFullPrecision": false,
+                "table": {
+                    "stickySummary": false,
+                    "summaryColumns": [
+                        "SUM",
+                        "AVG"
+                    ]
+                },
+                "yAxis": {
+                    "left": {
+                        "showUnits": true
+                    },
+                    "right": {
+                        "showUnits": true
+                    }
+                },
+                "setPeriodToTimeRange": true,
+                "title": "WAF - Allowed, Blocked & Captcha Requests"
+            }
+        },
+        {
+            "type": "explorer",
+            "x": 0,
+            "y": 16,
+            "width": 24,
+            "height": 15,
+            "properties": {
+                "metrics": [
+                    {
+                        "metricName": "CPUUtilization",
+                        "resourceType": "AWS::RDS::DBInstance",
+                        "stat": "Average"
+                    },
+                    {
+                        "metricName": "DatabaseConnections",
+                        "resourceType": "AWS::RDS::DBInstance",
+                        "stat": "Sum"
+                    },
+                    {
+                        "metricName": "ReadLatency",
+                        "resourceType": "AWS::RDS::DBInstance",
+                        "stat": "Average"
+                    },
+                    {
+                        "metricName": "WriteLatency",
+                        "resourceType": "AWS::RDS::DBInstance",
+                        "stat": "Average"
+                    },
+                    {
+                        "metricName": "FreeStorageSpace",
+                        "resourceType": "AWS::RDS::DBInstance",
+                        "stat": "Average"
+                    }
+                ],
+                "labels": [
+                    {
+                        "key": "name",
+                        "value": "friendscapstonerds"
+                    }
+                ],
+                "widgetOptions": {
+                    "legend": {
+                        "position": "bottom"
+                    },
+                    "view": "timeSeries",
+                    "stacked": false,
+                    "rowsPerPage": 2,
+                    "widgetsPerRow": 3
+                },
+                "period": 86400,
+                "splitBy": "#",
+                "region": "us-west-2",
+                "title": "RDS multigraph"
+            }
+        }
+    ]
+}

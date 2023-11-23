@@ -7,8 +7,6 @@
             "x": 0,
             "type": "metric",
             "properties": {
-                "view": "timeSeries",
-                "stacked": false,
                 "metrics": [
                     [
                         "AWS/Lambda",
@@ -29,16 +27,19 @@
                         }
                     ]
                 ],
+                "view": "timeSeries",
+                "stacked": false,
                 "region": "us-east-1",
                 "title": "Lambda - CardsDelivery - Invoke vs Errors",
-                "period": 300
+                "period": 86400,
+                "stat": "Average"
             }
         },
         {
             "height": 6,
             "width": 6,
-            "y": 0,
-            "x": 17,
+            "y": 6,
+            "x": 6,
             "type": "metric",
             "properties": {
                 "view": "timeSeries",
@@ -68,23 +69,28 @@
             "x": 6,
             "type": "metric",
             "properties": {
-                "view": "timeSeries",
-                "stacked": false,
                 "metrics": [
                     [
                         "AWS/Lambda",
                         "Duration",
                         "FunctionName",
-                        "friends-capstone-notification-lambda"
+                        "friends-capstone-notification-lambda",
+                        {
+                            "region": "us-east-1"
+                        }
                     ]
                 ],
+                "view": "timeSeries",
+                "stacked": false,
                 "region": "us-east-1",
-                "title": "Lambda - CardsDelivery - Duration"
+                "title": "Lambda - CardsDelivery - Duration",
+                "period": 3600,
+                "stat": "Average"
             }
         },
         {
             "height": 6,
-            "width": 5,
+            "width": 8,
             "y": 0,
             "x": 12,
             "type": "metric",
@@ -104,11 +110,11 @@
             }
         },
         {
-            "type": "metric",
-            "x": 0,
-            "y": 6,
-            "width": 6,
             "height": 6,
+            "width": 6,
+            "y": 6,
+            "x": 0,
+            "type": "metric",
             "properties": {
                 "view": "timeSeries",
                 "stacked": false,

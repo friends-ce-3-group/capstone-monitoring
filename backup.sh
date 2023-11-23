@@ -9,7 +9,7 @@ dashboards=(
 )
 for dash in "${dashboards[@]}"
 do
-    dashfile="$dash.json"
+    dashfile="./cloudwatch/$dash.json"
     aws cloudwatch get-dashboard --region $region --dashboard-name $dash | jq ".DashboardBody" > $dashfile
     python3 backup.py --json_file $dashfile
     echo ""

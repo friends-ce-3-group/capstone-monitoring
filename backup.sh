@@ -5,7 +5,7 @@ dashboards=(
     friends-capstone-temporary-ManagementEvents
     friends-capstone-temporary-CardsDelivery
     friends-capstone-temporary-Thumbnail
-    friends-test-OMG
+    friends-test-main
 )
 for dash in "${dashboards[@]}"
 do

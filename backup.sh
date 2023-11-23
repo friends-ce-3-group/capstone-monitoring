@@ -1,4 +1,15 @@
 #!/bin/bash
-aws cloudwatch get-dashboard --region us-west-2 --dashboard-name friends-capstone-temporary-RDS | jq ".DashboardBody" >> friends-capstone-temporary-RDS.json
-python backup.py --json_file friends-capstone-temporary-RDS.json
-cat friends-capstone-temporary-RDS.json
+dashboards=(
+    friends-capstone-temporary-RDS 
+    friends-capstone-temporary-ManagementEvents
+    friends-capstone-temporary-CardsDelivery
+    friends-capstone-temporary-Thumbnail
+    friends-test-OMG
+)
+for dash in "${dashboards[@]}"
+do
+    dashfile="$dash.json"
+    aws cloudwatch get-dashboard --region us-west-2 --dashboard-name $dash | jq ".DashboardBody" > $dashfile
+    python3 backup.py --json_file $dashfile
+    cat $dashfile
+done

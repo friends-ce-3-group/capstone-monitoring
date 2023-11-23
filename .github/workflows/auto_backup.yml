@@ -28,5 +28,5 @@ jobs:
       - name: backup dashboards
         run: ./backup.sh
       
-      - name: show file
-        run : ls
+      - name: lists files
+        run : ls *.json

@@ -250,7 +250,7 @@
             }
         },
         {
-            "height": 7,
+            "height": 4,
             "width": 7,
             "y": 10,
             "x": 15,
@@ -297,15 +297,6 @@
                         {
                             "region": "us-west-2",
                             "color": "#2ca02c"
-                        }
-                    ],
-                    [
-                        ".",
-                        "FreeableMemory",
-                        ".",
-                        ".",
-                        {
-                            "region": "us-west-2"
                         }
                     ]
                 ],
@@ -450,6 +441,20 @@
                 "trend": false,
                 "title": "ECS - Card CRUD APIs - CPUUtilization",
                 "stacked": false
+            }
+        },
+        {
+            "type": "log",
+            "x": 15,
+            "y": 14,
+            "width": 7,
+            "height": 3,
+            "properties": {
+                "query": "SOURCE '/ecs/friends-capstone-cluster/friends-capstone-crud-api-service' | SOURCE '/ecs/friends-capstone-thumbnails-api-ecs-task' | fields @timestamp, @message, @logStream, @log\n| filter @message like /(?i)Can't connect to MySQL server/ \n| sort @timestamp asc\n| stats count() by bin(1h)\n| limit 10000",
+                "region": "us-west-2",
+                "stacked": false,
+                "title": "RDS - CardDB - ConnectionErrors",
+                "view": "bar"
             }
         }
     ]

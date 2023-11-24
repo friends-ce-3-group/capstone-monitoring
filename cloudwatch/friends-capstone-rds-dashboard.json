@@ -65,7 +65,7 @@
         {
             "height": 6,
             "width": 6,
-            "y": 6,
+            "y": 12,
             "x": 0,
             "type": "metric",
             "properties": {
@@ -150,6 +150,20 @@
                 ],
                 "region": "us-west-2",
                 "title": "RDS - CardDB - FreeStorageSpace"
+            }
+        },
+        {
+            "height": 6,
+            "width": 6,
+            "y": 6,
+            "x": 0,
+            "type": "log",
+            "properties": {
+                "query": "SOURCE '/ecs/friends-capstone-cluster/friends-capstone-crud-api-service' | SOURCE '/ecs/friends-capstone-thumbnails-api-ecs-task' | fields @timestamp, @message, @logStream, @log\n| filter @message like /(?i)Can't connect to MySQL server/ \n| sort @timestamp asc\n| stats count() by bin(1h)\n| limit 10000",
+                "region": "us-west-2",
+                "stacked": false,
+                "title": "RDS - CardDB - ConnectionErrors",
+                "view": "bar"
             }
         }
     ]

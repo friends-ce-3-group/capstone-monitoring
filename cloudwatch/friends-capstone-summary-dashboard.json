@@ -104,7 +104,7 @@
             "x": 0,
             "type": "log",
             "properties": {
-                "query": "SOURCE '/ecs/friends-capstone-thumbnails-api-ecs-task' | fields @timestamp, @message, @logStream, @log\n| sort @timestamp desc\n| limit 20",
+                "query": "SOURCE '/ecs/friends-capstone-thumbnails-api-ecs-task' | fields @timestamp, @message, @log\n| sort @timestamp desc\n| limit 35",
                 "region": "us-west-2",
                 "stacked": false,
                 "title": "Logs - ECS",
@@ -444,17 +444,44 @@
             }
         },
         {
-            "type": "log",
-            "x": 15,
-            "y": 14,
-            "width": 7,
             "height": 3,
+            "width": 7,
+            "y": 14,
+            "x": 15,
+            "type": "log",
             "properties": {
                 "query": "SOURCE '/ecs/friends-capstone-cluster/friends-capstone-crud-api-service' | SOURCE '/ecs/friends-capstone-thumbnails-api-ecs-task' | fields @timestamp, @message, @logStream, @log\n| filter @message like /(?i)Can't connect to MySQL server/ \n| sort @timestamp asc\n| stats count() by bin(1h)\n| limit 10000",
                 "region": "us-west-2",
                 "stacked": false,
                 "title": "RDS - CardDB - ConnectionErrors",
                 "view": "bar"
+            }
+        },
+        {
+            "height": 4,
+            "width": 24,
+            "y": 21,
+            "x": 0,
+            "type": "log",
+            "properties": {
+                "query": "SOURCE '/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs' | fields @timestamp, @message, @log\n| sort @timestamp desc\n| limit 30",
+                "region": "us-west-2",
+                "stacked": false,
+                "view": "table",
+                "title": "Logs - Lambda"
+            }
+        },
+        {
+            "type": "log",
+            "x": 0,
+            "y": 25,
+            "width": 24,
+            "height": 6,
+            "properties": {
+                "query": "SOURCE '/aws/lambda/CHANGE-THIS-dev-api' | fields @timestamp, @message, @logStream, @log\n| sort @timestamp desc\n| limit 20",
+                "region": "us-east-1",
+                "stacked": false,
+                "view": "table"
             }
         }
     ]

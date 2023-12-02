@@ -1,13 +1,9 @@
 locals {
-  json_files = fileset(path.module, "../cloudwatch/*.json")
+  json_files = fileset("${path.module}/../cloudwatch", "*.json")
 }
 
 output "lcl" {
   value = local.json_files
-}
-
-output "pm" {
-  value = path.module
 }
 
 //resource "aws_cloudwatch_dashboard" "main" {

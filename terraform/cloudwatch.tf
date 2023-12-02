@@ -6,8 +6,8 @@ output "lcl" {
   value = local.json_files
 }
 
-//resource "aws_cloudwatch_dashboard" "main" {
-//  for_each       = local.json_files
-//  dashboard_name = replace(replace(each.value, ".json", "-terraform"), "cloudwatch/", "")
-//  dashboard_body = file("${path.module}/${each.value}")
-//}
+resource "aws_cloudwatch_dashboard" "main" {
+  for_each       = local.json_files
+  dashboard_name = replace(each.value, ".json", "-terraform")
+  dashboard_body = file("${path.module}/../cloudwatch/${each.value}")
+}

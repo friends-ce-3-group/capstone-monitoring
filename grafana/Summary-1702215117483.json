@@ -1,0 +1,4207 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 1,
+  "links": [],
+  "liveNow": true,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 12,
+      "panels": [],
+      "title": "Management",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 0,
+        "y": 1
+      },
+      "id": 42,
+      "options": {
+        "displayLabels": [
+          "name",
+          "percent"
+        ],
+        "legend": {
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": true,
+          "values": [
+            "percent"
+          ]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "Country": "*",
+            "WebACL": "friends-capstone-regional-web-acl"
+          },
+          "expression": "",
+          "hide": false,
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "AllowedRequests",
+          "metricQueryType": 0,
+          "namespace": "AWS/WAFV2",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "B",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Breakdown of Visitors by Countries",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": [],
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 4,
+        "y": 1
+      },
+      "id": 44,
+      "options": {
+        "displayLabels": [
+          "name",
+          "value"
+        ],
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "values": [
+            "percent",
+            "value"
+          ]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "Device": "*",
+            "WebACL": "friends-capstone-regional-web-acl"
+          },
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "AllowedRequests",
+          "metricQueryType": 0,
+          "namespace": "AWS/WAFV2",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Breakdown of Visitors by Devices",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-BlPu"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisGridShow": true,
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 9,
+        "y": 1
+      },
+      "id": 20,
+      "options": {
+        "barRadius": 0.1,
+        "barWidth": 0.74,
+        "colorByField": "Number of Cards",
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "orientation": "vertical",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xField": "Time",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "ApiName": "friends-capstone-infra-s3-images-api-gateway",
+            "Stage": "dev"
+          },
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "Count",
+          "metricQueryType": 0,
+          "namespace": "AWS/ApiGateway",
+          "period": "1d",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "us-west-2",
+          "sqlExpression": "",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Number of New Images Uploaded Per Day",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "Number of Cards",
+            "binary": {
+              "left": "Count",
+              "operator": "*",
+              "reducer": "sum",
+              "right": "0.5"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": true
+          }
+        }
+      ],
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CeRMmRNSk"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 14,
+        "y": 1
+      },
+      "id": 46,
+      "options": {
+        "barRadius": 0.5,
+        "barWidth": 0.86,
+        "colorByField": "Invocations",
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "orientation": "auto",
+        "showValue": "always",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CeRMmRNSk"
+          },
+          "dimensions": {
+            "FunctionName": "friends-capstone-notification-lambda",
+            "Resource": "friends-capstone-notification-lambda"
+          },
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-east-1:255945442255:log-group:/aws/lambda/friends-capstone-notification-lambda:*",
+              "name": "/aws/lambda/friends-capstone-notification-lambda"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "Invocations",
+          "metricQueryType": 0,
+          "namespace": "AWS/Lambda",
+          "period": "1d",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Number of Cards Already Sent",
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CeRMmRNSk"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 19,
+        "y": 1
+      },
+      "id": 47,
+      "options": {
+        "barRadius": 0.5,
+        "barWidth": 0.86,
+        "colorByField": "Invocations",
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "orientation": "auto",
+        "showValue": "always",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CeRMmRNSk"
+          },
+          "dimensions": {
+            "FunctionName": "friends-capstone-notification-lambda"
+          },
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-east-1:255945442255:log-group:/aws/lambda/friends-capstone-notification-lambda:*",
+              "name": "/aws/lambda/friends-capstone-notification-lambda"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "ProvisionedConcurrencyInvocations",
+          "metricQueryType": 0,
+          "namespace": "AWS/Lambda",
+          "period": "1d",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Number of Cards To Be Sent",
+      "type": "barchart"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 2,
+      "panels": [],
+      "title": "Security",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 10
+      },
+      "id": 49,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 1,
+        "fullHighlight": false,
+        "groupWidth": 0.94,
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "always",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xField": "Time",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "Rule": "ALL",
+            "WebACL": "friends-capstone-regional-web-acl"
+          },
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "AllowedRequests",
+          "metricQueryType": 0,
+          "namespace": "AWS/WAFV2",
+          "period": "2d",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sql": {
+            "from": {
+              "property": {
+                "name": "AWS/WAFV2",
+                "type": "string"
+              },
+              "type": "property"
+            },
+            "select": {
+              "name": "AVG",
+              "type": "function"
+            }
+          },
+          "statistic": "Sum"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "Rule": "ALL",
+            "WebACL": "friends-capstone-regional-web-acl"
+          },
+          "expression": "",
+          "hide": false,
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "BlockedRequests",
+          "metricQueryType": 0,
+          "namespace": "AWS/WAFV2",
+          "period": "2d",
+          "queryMode": "Metrics",
+          "refId": "B",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "WAF - Allowed vs Blocked Requests on ALB & APIGW",
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Bots:Verified"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Non-bots"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Bots:Unverified"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Bots:DeveloperPlatform"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Bots:UserTriggered:Verified"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "light-green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 10
+      },
+      "id": 51,
+      "options": {
+        "displayLabels": [
+          "name",
+          "percent"
+        ],
+        "legend": {
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "values": [
+            "value"
+          ]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {},
+          "expression": "SUM(SEARCH('AWS/WAFV2 MetricName=(\"SampleBlockedRequest\" OR \"SampleAllowedRequest\" OR \"SampleCaptchaRequest\" OR \"SampleChallengeRequest\") BotCategory=\"ALL_BOTS\" Region=\"us-west-2\" WebACL=\"friends-capstone-regional-web-acl\" VerificationStatus=\"bot:verified\" :aws.AccountId=LOCAL', 'Sum', 3600))",
+          "id": "botsverified",
+          "label": "Bots:Verified",
+          "logGroups": [],
+          "matchExact": true,
+          "metricEditorMode": 1,
+          "metricName": "",
+          "metricQueryType": 0,
+          "namespace": "AWS/WAFV2",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {},
+          "expression": "SUM(SEARCH('AWS/WAFV2 MetricName=(\"SampleBlockedRequest\" OR \"SampleAllowedRequest\" OR \"SampleCaptchaRequest\" OR \"SampleChallengeRequest\") BotCategory=\"ALL_BOTS\" Region=\"us-west-2\" WebACL=\"friends-capstone-regional-web-acl\" VerificationStatus=\"bot:developer_platform:verified\" :aws.AccountId=LOCAL', 'Sum', 3600))",
+          "hide": false,
+          "id": "botsdeveloperplatformverified",
+          "label": "Bots:DeveloperPlatform",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": true,
+          "metricEditorMode": 1,
+          "metricName": "",
+          "metricQueryType": 0,
+          "namespace": "",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "B",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {},
+          "expression": "SUM(SEARCH('AWS/WAFV2 MetricName=(\"SampleBlockedRequest\" OR \"SampleAllowedRequest\" OR \"SampleCaptchaRequest\" OR \"SampleChallengeRequest\") BotCategory=\"ALL_BOTS\" Region=\"us-west-2\" WebACL=\"friends-capstone-regional-web-acl\" VerificationStatus=\"bot:user_triggered:verified\" :aws.AccountId=LOCAL', 'Sum', 3600))",
+          "hide": false,
+          "id": "botsusertriggeredverified",
+          "label": "Bots:UserTriggered:Verified",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": true,
+          "metricEditorMode": 1,
+          "metricName": "",
+          "metricQueryType": 0,
+          "namespace": "",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "C",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {},
+          "expression": "SUM(SEARCH('AWS/WAFV2 MetricName=(\"SampleBlockedRequest\" OR \"SampleAllowedRequest\" OR \"SampleCaptchaRequest\" OR \"SampleChallengeRequest\") BotCategory=\"ALL_BOTS\" Region=\"us-west-2\" WebACL=\"friends-capstone-regional-web-acl\" VerificationStatus=\"bot:unverified\" :aws.AccountId=LOCAL', 'Sum', 3600))",
+          "hide": false,
+          "id": "botsunverified",
+          "label": "Bots:Unverified",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": true,
+          "metricEditorMode": 1,
+          "metricName": "",
+          "metricQueryType": 0,
+          "namespace": "",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "D",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {},
+          "expression": "SUM(SEARCH('AWS/WAFV2 MetricName=(\"SampleBlockedRequest\" OR \"SampleAllowedRequest\" OR \"SampleCaptchaRequest\" OR \"SampleChallengeRequest\") BotCategory=\"NON_BOT\" Region=\"us-west-2\" WebACL=\"friends-capstone-regional-web-acl\" :aws.AccountId=LOCAL', 'Sum', 3600))",
+          "hide": false,
+          "id": "nonbots",
+          "label": "Non-bots",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": true,
+          "metricEditorMode": 1,
+          "metricName": "",
+          "metricQueryType": 0,
+          "namespace": "",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "E",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        }
+      ],
+      "title": "WAF - Bot Vs Non-Bot Visitors",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 1000,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 100
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 12,
+        "y": 10
+      },
+      "id": 53,
+      "options": {
+        "displayMode": "lcd",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "text": {}
+      },
+      "pluginVersion": "9.4.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {},
+          "expression": "SUM(SEARCH('{AWS/WAFV2,Signal,Region,WebACL} MetricName=(\"SampleBlockedRequest\" OR \"SampleAllowedRequest\" OR \"SampleCaptchaRequest\" OR \"SampleChallengeRequest\") Region=\"us-west-2\" WebACL=\"friends-capstone-regional-web-acl\" Signal=\"non_browser_user_agent\" :aws.AccountId=LOCAL', 'Sum', 3600))",
+          "id": "nonBrowserUserAgent",
+          "label": "NonBrowserUserAgent",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": true,
+          "metricEditorMode": 1,
+          "metricName": "",
+          "metricQueryType": 0,
+          "namespace": "",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {},
+          "expression": "SUM(SEARCH('{AWS/WAFV2,Signal,Region,WebACL} MetricName=(\"SampleBlockedRequest\" OR \"SampleAllowedRequest\" OR \"SampleCaptchaRequest\" OR \"SampleChallengeRequest\") Region=\"us-west-2\" WebACL=\"friends-capstone-regional-web-acl\" Signal=\"known_bot_data_center\" :aws.AccountId=LOCAL', 'Sum', 3600))",
+          "hide": false,
+          "id": "knownBotDataCenter",
+          "label": "KnownBotDataCenter",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": true,
+          "metricEditorMode": 1,
+          "metricName": "",
+          "metricQueryType": 0,
+          "namespace": "",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "B",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {},
+          "expression": "SUM(SEARCH('{AWS/WAFV2,Signal,Region,WebACL} MetricName=(\"SampleBlockedRequest\" OR \"SampleAllowedRequest\" OR \"SampleCaptchaRequest\" OR \"SampleChallengeRequest\") Region=\"us-west-2\" WebACL=\"friends-capstone-regional-web-acl\" Signal=\"automated_browser\" :aws.AccountId=LOCAL', 'Sum', 3600))",
+          "hide": false,
+          "id": "automatedBrowser",
+          "label": "AutomatedBrowser",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": true,
+          "metricEditorMode": 1,
+          "metricName": "",
+          "metricQueryType": 0,
+          "namespace": "",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "C",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        }
+      ],
+      "title": "WAF - Source of Bots Detected",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-YlRd"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 17,
+        "y": 10
+      },
+      "id": 55,
+      "options": {
+        "displayMode": "gradient",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true
+      },
+      "pluginVersion": "9.4.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {},
+          "expression": "SUM(SEARCH('AWS/WAFV2 MetricName=(\"SampleBlockedRequest\" OR \"SampleAllowedRequest\" OR \"SampleCaptchaRequest\" OR \"SampleChallengeRequest\") BotCategory=\"bot:category:miscellaneous\" Region=\"us-west-2\" WebACL=\"friends-capstone-regional-web-acl\" :aws.AccountId=LOCAL', 'Sum', 3600))",
+          "id": "miscellaneous",
+          "label": "Miscellaneous",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": true,
+          "metricEditorMode": 1,
+          "metricName": "",
+          "metricQueryType": 0,
+          "namespace": "",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {},
+          "expression": "SUM(SEARCH('AWS/WAFV2 MetricName=(\"SampleBlockedRequest\" OR \"SampleAllowedRequest\" OR \"SampleCaptchaRequest\" OR \"SampleChallengeRequest\") BotCategory=\"bot:category:http_library\" Region=\"us-west-2\" WebACL=\"friends-capstone-regional-web-acl\" :aws.AccountId=LOCAL', 'Sum', 3600))",
+          "hide": false,
+          "id": "httpLibrary",
+          "label": "HttpLibrary",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": true,
+          "metricEditorMode": 1,
+          "metricName": "",
+          "metricQueryType": 0,
+          "namespace": "",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "B",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {},
+          "expression": "SUM(SEARCH('AWS/WAFV2 MetricName=(\"SampleBlockedRequest\" OR \"SampleAllowedRequest\" OR \"SampleCaptchaRequest\" OR \"SampleChallengeRequest\") BotCategory=\"bot:category:monitoring\" Region=\"us-west-2\" WebACL=\"friends-capstone-regional-web-acl\" :aws.AccountId=LOCAL', 'Sum', 3600))",
+          "hide": false,
+          "id": "monitoring",
+          "label": "Monitoring",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": true,
+          "metricEditorMode": 1,
+          "metricName": "",
+          "metricQueryType": 0,
+          "namespace": "",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "C",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        }
+      ],
+      "title": "WAF - Category of Bots Detected",
+      "type": "bargauge"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 18
+      },
+      "id": 26,
+      "panels": [],
+      "title": "Site Reliability Summary",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 2,
+          "mappings": [],
+          "max": 1,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0.8
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 0,
+        "y": 19
+      },
+      "id": 40,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "9.4.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "LoadBalancer": "app/friends-capstone-ecs-shared-alb/c1e262c436e26421"
+          },
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": true,
+          "metricEditorMode": 0,
+          "metricName": "TargetResponseTime",
+          "metricQueryType": 0,
+          "namespace": "AWS/ApplicationELB",
+          "period": "1d",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "us-west-2",
+          "sqlExpression": "",
+          "statistic": "Average"
+        }
+      ],
+      "title": "ALB - APIs  - Avg Response Time - Latest",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 2,
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 5,
+        "x": 4,
+        "y": 19
+      },
+      "id": 16,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "/^CPUUtilization$/",
+          "values": false
+        },
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true,
+        "text": {
+          "valueSize": 28
+        }
+      },
+      "pluginVersion": "9.4.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "ClusterName": "friends-capstone-cluster"
+          },
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "CPUUtilization",
+          "metricQueryType": 0,
+          "namespace": "AWS/ECS",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "us-west-2",
+          "sqlExpression": "",
+          "statistic": "Average"
+        }
+      ],
+      "title": "ECS - CardCrudApis - CPU Utilization - Latest",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 2,
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 5,
+        "x": 9,
+        "y": 19
+      },
+      "id": 38,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "/^CPUUtilization$/",
+          "values": false
+        },
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true,
+        "text": {
+          "valueSize": 28
+        }
+      },
+      "pluginVersion": "9.4.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "ClusterName": "friends-capstone-cluster"
+          },
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "MemoryUtilization",
+          "metricQueryType": 0,
+          "namespace": "AWS/ECS",
+          "period": "1d",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "us-west-2",
+          "sqlExpression": "",
+          "statistic": "Average"
+        }
+      ],
+      "title": "ECS - CardCrudApis - Memory Utilization - Latest",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "max": 1000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 300
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 5,
+        "x": 14,
+        "y": 19
+      },
+      "id": 18,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^Latency$/",
+          "values": false
+        },
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "9.4.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "Stage": "*"
+          },
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "Latency",
+          "metricQueryType": 0,
+          "namespace": "AWS/ApiGateway",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "us-west-2",
+          "sqlExpression": "",
+          "statistic": "Average"
+        }
+      ],
+      "title": "API Gateway - Upload Images - Latency - Latest",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 19,
+        "y": 19
+      },
+      "id": 32,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^CPUUtilization$/",
+          "limit": 1,
+          "values": false
+        },
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "9.4.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "DBInstanceIdentifier": "friendscapstonerds"
+          },
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": true,
+          "metricEditorMode": 0,
+          "metricName": "CPUUtilization",
+          "metricQueryType": 0,
+          "namespace": "AWS/RDS",
+          "period": "1d",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        }
+      ],
+      "title": "RDS - CPU Utilisation - Latest",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "area"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0.3
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 0,
+        "y": 26
+      },
+      "id": 14,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "timezone": [
+          "Asia/Singapore"
+        ],
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "LoadBalancer": "app/friends-capstone-ecs-shared-alb/c1e262c436e26421"
+          },
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": true,
+          "metricEditorMode": 0,
+          "metricName": "TargetResponseTime",
+          "metricQueryType": 0,
+          "namespace": "AWS/ApplicationELB",
+          "period": "1d",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "us-west-2",
+          "sqlExpression": "",
+          "statistic": "Average"
+        }
+      ],
+      "title": "ALB - APIs Avg Response Time - Trend",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "bars",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line+area"
+            }
+          },
+          "decimals": 2,
+          "mappings": [],
+          "max": 0.05,
+          "min": 0,
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 4,
+        "y": 26
+      },
+      "id": 22,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.4.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "ClusterName": "friends-capstone-cluster",
+            "ServiceName": "friends-capstone-crud-api-service"
+          },
+          "expression": "",
+          "hide": false,
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "CPUUtilization",
+          "metricQueryType": 0,
+          "namespace": "AWS/ECS",
+          "period": "1d",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        }
+      ],
+      "title": "ECS - CardCrudApis - CPU Utilisation - Daily Trend",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "bars",
+            "fillOpacity": 0,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line+area"
+            }
+          },
+          "mappings": [],
+          "max": 10,
+          "min": 0,
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 9,
+        "y": 26
+      },
+      "id": 36,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "ClusterName": "friends-capstone-cluster",
+            "ServiceName": "friends-capstone-crud-api-service"
+          },
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "MemoryUtilization",
+          "metricQueryType": 0,
+          "namespace": "AWS/ECS",
+          "period": "1d",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        }
+      ],
+      "title": "ECS - CardCrudApis - Memory Utilisation - Daily Trend",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "bars",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line+area"
+            }
+          },
+          "mappings": [],
+          "max": 1000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "light-blue",
+                "value": null
+              },
+              {
+                "color": "light-red",
+                "value": 300
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 14,
+        "y": 26
+      },
+      "id": 30,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "Stage": "*"
+          },
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "Latency",
+          "metricQueryType": 0,
+          "namespace": "AWS/ApiGateway",
+          "period": "1d",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "us-west-2",
+          "sqlExpression": "",
+          "statistic": "Average"
+        }
+      ],
+      "title": "API Gateway - Upload Images - Latency - Daily Trend",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "bars",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line+area"
+            }
+          },
+          "decimals": 2,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 5
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 19,
+        "y": 26
+      },
+      "id": 34,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "DBInstanceIdentifier": "friendscapstonerds"
+          },
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": true,
+          "metricEditorMode": 0,
+          "metricName": "CPUUtilization",
+          "metricQueryType": 0,
+          "namespace": "AWS/RDS",
+          "period": "1d",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        }
+      ],
+      "title": "RDS - CPU Utilisation - Daily Trend",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "description": "Total number of HTTP requests handled",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 34
+      },
+      "id": 61,
+      "options": {
+        "displayLabels": [
+          "percent"
+        ],
+        "legend": {
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": true,
+          "values": []
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.4.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {},
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/ecs/containerinsights/friends-capstone-cluster/prometheus:*",
+              "name": "/aws/ecs/containerinsights/friends-capstone-cluster/prometheus"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/ecs/containerinsights/friends-capstone-cluster/performance:*",
+              "name": "/aws/ecs/containerinsights/friends-capstone-cluster/performance"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "flask_http_request_total",
+          "metricQueryType": 0,
+          "namespace": "ECS/ContainerInsights/Prometheus",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "HTTP Requests Distribution Among Nodes",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "description": "Total number of HTTP requests which resulted in an exception",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 6,
+        "y": 34
+      },
+      "id": 65,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {
+          "valueSize": 30
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.4.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {},
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/ecs/containerinsights/friends-capstone-cluster/performance:*",
+              "name": "/aws/ecs/containerinsights/friends-capstone-cluster/performance"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/ecs/containerinsights/friends-capstone-cluster/prometheus:*",
+              "name": "/aws/ecs/containerinsights/friends-capstone-cluster/prometheus"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/ecs-cwagent-prometheus:*",
+              "name": "/ecs/ecs-cwagent-prometheus"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "flask_http_request_exceptions_total",
+          "metricQueryType": 0,
+          "namespace": "ECS/ContainerInsights/Prometheus",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Total HTTP Request Exceptions",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "LuSeFiHIz"
+      },
+      "description": "Total number of HTTP requests",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 25,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 11,
+        "y": 34
+      },
+      "id": 67,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "LuSeFiHIz"
+          },
+          "dimensions": {
+            "ClusterName": "friends-capstone-cluster",
+            "TaskDefinitionFamily": "friends-capstone-crud-api-ecs-task"
+          },
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/ecs/containerinsights/friends-capstone-cluster/performance:*",
+              "name": "/aws/ecs/containerinsights/friends-capstone-cluster/performance"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/ecs/containerinsights/friends-capstone-cluster/prometheus:*",
+              "name": "/aws/ecs/containerinsights/friends-capstone-cluster/prometheus"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/ecs-cwagent-prometheus:*",
+              "name": "/ecs/ecs-cwagent-prometheus"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "flask_http_request_total",
+          "metricQueryType": 0,
+          "namespace": "ECS/ContainerInsights/Prometheus",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Total HTTP Requests Handled",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "description": "Total user and system CPU time spent in seconds.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 25,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 17,
+        "y": 34
+      },
+      "id": 69,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "ClusterName": "friends-capstone-cluster",
+            "TaskDefinitionFamily": "friends-capstone-crud-api-ecs-task"
+          },
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/ecs/containerinsights/friends-capstone-cluster/performance:*",
+              "name": "/aws/ecs/containerinsights/friends-capstone-cluster/performance"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/ecs/containerinsights/friends-capstone-cluster/prometheus:*",
+              "name": "/aws/ecs/containerinsights/friends-capstone-cluster/prometheus"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/ecs-cwagent-prometheus:*",
+              "name": "/ecs/ecs-cwagent-prometheus"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "process_cpu_seconds_total",
+          "metricQueryType": 0,
+          "namespace": "ECS/ContainerInsights/Prometheus",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Process CPU Seconds",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 23,
+        "x": 0,
+        "y": 42
+      },
+      "id": 57,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "ClusterName": "friends-capstone-cluster"
+          },
+          "expression": "",
+          "id": "mm0m0",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "PendingTaskCount",
+          "metricQueryType": 0,
+          "namespace": "ECS/ContainerInsights",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {},
+          "expression": "",
+          "hide": false,
+          "id": "mm0m1",
+          "label": "\n",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "DesiredTaskCount",
+          "metricQueryType": 0,
+          "namespace": "ECS/ContainerInsights",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "B",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {},
+          "expression": "",
+          "hide": false,
+          "id": "mm0m2",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "RunningTaskCount",
+          "metricQueryType": 0,
+          "namespace": "ECS/ContainerInsights",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "C",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        }
+      ],
+      "title": "ECS - Task Count",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 49
+      },
+      "id": 58,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "ClusterName": "friends-capstone-cluster"
+          },
+          "expression": "",
+          "id": "mm0m0",
+          "label": "ServiceCount",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "ServiceCount",
+          "metricQueryType": 0,
+          "namespace": "ECS/ContainerInsights",
+          "period": "5mins",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        }
+      ],
+      "title": "ECS - Service Count",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 11,
+        "x": 12,
+        "y": 49
+      },
+      "id": 59,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "ClusterName": "friends-capstone-cluster"
+          },
+          "expression": "",
+          "id": "mm0m0",
+          "label": "ContainerInstanceCount",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "ContainerInstanceCount",
+          "metricQueryType": 0,
+          "namespace": "ECS/ContainerInsights",
+          "period": "5mins",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Average"
+        }
+      ],
+      "title": "ECS - Container Count",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "",
+  "revision": 1,
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-30d",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Summary",
+  "uid": "R9E5kkNIz",
+  "version": 75,
+  "weekStart": ""
+}

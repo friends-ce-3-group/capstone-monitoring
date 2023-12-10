@@ -3,7 +3,6 @@ region=us-west-2
 dashboards=(
     friends-capstone-APIGateway-Thumbnail-terraform
     friends-capstone-CardsDelivery-terraform
-    friends-capstone-ecs-prometheus-terraform
     friends-capstone-ecs-terraform
     friends-capstone-rds-dashboard-terraform
     friends-capstone-summary-dashboard-terraform   

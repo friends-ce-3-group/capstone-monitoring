@@ -1,13 +1,12 @@
 #!/bin/bash
 region=us-west-2
 dashboards=(
-    friends-capstone-rds-dashboard 
-    friends-capstone-MgtEvents
-    friends-capstone-CardsDelivery
-    friends-capstone-APIGateway-Thumbnail
-    friends-capstone-summary-dashboard
-    friends-capstone-ecs
-    friends-capstone-ecs-prometheus
+    friends-capstone-APIGateway-Thumbnail-terraform
+    friends-capstone-CardsDelivery-terraform
+    friends-capstone-ecs-prometheus-terraform
+    friends-capstone-ecs-terraform
+    friends-capstone-rds-dashboard-terraform
+    friends-capstone-summary-dashboard-terraform   
 )
 for dash in "${dashboards[@]}"
 do

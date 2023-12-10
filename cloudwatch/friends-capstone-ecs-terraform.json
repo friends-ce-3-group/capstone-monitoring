@@ -355,14 +355,14 @@
         {
             "height": 6,
             "width": 24,
-            "y": 8,
+            "y": 14,
             "x": 0,
             "type": "metric",
             "properties": {
                 "view": "timeSeries",
                 "stacked": false,
                 "region": "us-west-2",
-                "title": "gc_objects_collected_total",
+                "title": "gc_objects_collected_total_prometheus",
                 "metrics": [
                     [
                         "ECS/ContainerInsights/Prometheus",
@@ -410,14 +410,14 @@
         {
             "height": 6,
             "width": 24,
-            "y": 14,
+            "y": 8,
             "x": 0,
             "type": "metric",
             "properties": {
                 "view": "timeSeries",
                 "stacked": false,
                 "region": "us-west-2",
-                "title": "http_request_total",
+                "title": "http_request_total_prometheus",
                 "metrics": [
                     [
                         "ECS/ContainerInsights/Prometheus",
@@ -467,54 +467,59 @@
             "x": 0,
             "y": 20,
             "width": 24,
-            "height": 6,
+            "height": 5,
             "properties": {
-                "view": "timeSeries",
-                "stacked": false,
-                "region": "us-west-2",
-                "title": "gc_objects_collected_total",
                 "metrics": [
                     [
-                        "ECS/ContainerInsights/Prometheus",
-                        "python_gc_objects_collected_total",
-                        "instance",
-                        "30.0.4.57:5000",
+                        "ECS/ContainerInsights",
+                        "ServiceCount",
                         "ClusterName",
                         "friends-capstone-cluster",
-                        "TaskDefinitionFamily",
-                        "friends-capstone-crud-api-ecs-task"
+                        {
+                            "visible": false
+                        }
                     ],
                     [
                         "ECS/ContainerInsights/Prometheus",
-                        "python_gc_objects_collected_total",
-                        "instance",
-                        "30.0.3.93:5000",
-                        "ClusterName",
-                        "friends-capstone-cluster",
-                        "TaskDefinitionFamily",
-                        "friends-capstone-crud-api-ecs-task"
-                    ],
-                    [
-                        "ECS/ContainerInsights/Prometheus",
-                        "python_gc_objects_collected_total",
-                        "instance",
-                        "30.0.4.183:5000",
-                        "ClusterName",
-                        "friends-capstone-cluster",
-                        "TaskDefinitionFamily",
-                        "friends-capstone-crud-api-ecs-task"
-                    ],
-                    [
-                        "ECS/ContainerInsights/Prometheus",
-                        "python_gc_objects_collected_total",
+                        "process_cpu_seconds_total",
                         "instance",
                         "30.0.3.112:5000",
                         "ClusterName",
                         "friends-capstone-cluster",
                         "TaskDefinitionFamily",
                         "friends-capstone-crud-api-ecs-task"
+                    ],
+                    [
+                        "...",
+                        "30.0.3.93:5000",
+                        ".",
+                        ".",
+                        ".",
+                        "."
+                    ],
+                    [
+                        "...",
+                        "30.0.4.183:5000",
+                        ".",
+                        ".",
+                        ".",
+                        "."
+                    ],
+                    [
+                        "...",
+                        "30.0.4.57:5000",
+                        ".",
+                        ".",
+                        ".",
+                        "."
                     ]
-                ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "us-west-2",
+                "stat": "Average",
+                "period": 300,
+                "title": "process_cpu_seconds_total_prometheus"
             }
         }
     ]

@@ -1,0 +1,583 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 10,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "description": "Total number of HTTP requests handled",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 11,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "displayLabels": [
+          "percent"
+        ],
+        "legend": {
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": true,
+          "values": []
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.4.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {},
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/ecs/containerinsights/friends-capstone-cluster/prometheus:*",
+              "name": "/aws/ecs/containerinsights/friends-capstone-cluster/prometheus"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/ecs/containerinsights/friends-capstone-cluster/performance:*",
+              "name": "/aws/ecs/containerinsights/friends-capstone-cluster/performance"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "flask_http_request_total",
+          "metricQueryType": 0,
+          "namespace": "ECS/ContainerInsights/Prometheus",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "HTTP Requests Distribution Among Nodes",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "LuSeFiHIz"
+      },
+      "description": "Total number of HTTP requests",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 25,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 13,
+        "x": 11,
+        "y": 0
+      },
+      "id": 4,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "LuSeFiHIz"
+          },
+          "dimensions": {
+            "ClusterName": "friends-capstone-cluster",
+            "TaskDefinitionFamily": "friends-capstone-crud-api-ecs-task"
+          },
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/ecs/containerinsights/friends-capstone-cluster/performance:*",
+              "name": "/aws/ecs/containerinsights/friends-capstone-cluster/performance"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/ecs/containerinsights/friends-capstone-cluster/prometheus:*",
+              "name": "/aws/ecs/containerinsights/friends-capstone-cluster/prometheus"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/ecs-cwagent-prometheus:*",
+              "name": "/ecs/ecs-cwagent-prometheus"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "flask_http_request_total",
+          "metricQueryType": 0,
+          "namespace": "ECS/ContainerInsights/Prometheus",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Total HTTP Requests Handled",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "description": "Total number of HTTP requests which resulted in an exception",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 11,
+        "x": 0,
+        "y": 8
+      },
+      "id": 8,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.4.7",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {},
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/ecs/containerinsights/friends-capstone-cluster/performance:*",
+              "name": "/aws/ecs/containerinsights/friends-capstone-cluster/performance"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/ecs/containerinsights/friends-capstone-cluster/prometheus:*",
+              "name": "/aws/ecs/containerinsights/friends-capstone-cluster/prometheus"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/ecs-cwagent-prometheus:*",
+              "name": "/ecs/ecs-cwagent-prometheus"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "flask_http_request_exceptions_total",
+          "metricQueryType": 0,
+          "namespace": "ECS/ContainerInsights/Prometheus",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Total HTTP Request Exceptions",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "CnYWiRNIk"
+      },
+      "description": "Total user and system CPU time spent in seconds.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 25,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 13,
+        "x": 11,
+        "y": 8
+      },
+      "id": 6,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "CnYWiRNIk"
+          },
+          "dimensions": {
+            "ClusterName": "friends-capstone-cluster",
+            "TaskDefinitionFamily": "friends-capstone-crud-api-ecs-task"
+          },
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/alb/friends-capstone-ecs-shared-alb-access-log:*",
+              "name": "/alb/friends-capstone-ecs-shared-alb-access-log"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs:*",
+              "name": "/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds:*",
+              "name": "/aws/rds/instance/friendscapstonerds"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/rds/instance/friendscapstonerds/error:*",
+              "name": "/aws/rds/instance/friendscapstonerds/error"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/cloudtrail/friends-capstone-management-events:*",
+              "name": "/cloudtrail/friends-capstone-management-events"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-cluster/friends-capstone-crud-api-service:*",
+              "name": "/ecs/friends-capstone-cluster/friends-capstone-crud-api-service"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/friends-capstone-thumbnails-api-ecs-task:*",
+              "name": "/ecs/friends-capstone-thumbnails-api-ecs-task"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/ecs/containerinsights/friends-capstone-cluster/performance:*",
+              "name": "/aws/ecs/containerinsights/friends-capstone-cluster/performance"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/aws/ecs/containerinsights/friends-capstone-cluster/prometheus:*",
+              "name": "/aws/ecs/containerinsights/friends-capstone-cluster/prometheus"
+            },
+            {
+              "accountId": "255945442255",
+              "arn": "arn:aws:logs:us-west-2:255945442255:log-group:/ecs/ecs-cwagent-prometheus:*",
+              "name": "/ecs/ecs-cwagent-prometheus"
+            }
+          ],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "process_cpu_seconds_total",
+          "metricQueryType": 0,
+          "namespace": "ECS/ContainerInsights/Prometheus",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "default",
+          "sqlExpression": "",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Process CPU Seconds",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "",
+  "revision": 1,
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "ECS Prometheus Data",
+  "uid": "2dOLTcvSk",
+  "version": 6,
+  "weekStart": ""
+}

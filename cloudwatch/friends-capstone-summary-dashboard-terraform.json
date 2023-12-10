@@ -1,0 +1,514 @@
+{
+    "widgets": [
+        {
+            "height": 5,
+            "width": 7,
+            "y": 2,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/ECS",
+                        "CPUUtilization",
+                        "ServiceName",
+                        "friends-capstone-crud-api-service",
+                        "ClusterName",
+                        "friends-capstone-cluster",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ]
+                ],
+                "view": "gauge",
+                "region": "us-west-2",
+                "stat": "Average",
+                "period": 86400,
+                "start": "-PT1008H",
+                "end": "P0D",
+                "yAxis": {
+                    "left": {
+                        "max": 0.1,
+                        "min": 0
+                    }
+                },
+                "legend": {
+                    "position": "bottom"
+                },
+                "annotations": {
+                    "horizontal": [
+                        {
+                            "color": "#9467bd",
+                            "label": "Untitled annotation",
+                            "value": 0,
+                            "fill": "above"
+                        }
+                    ]
+                },
+                "liveData": false,
+                "setPeriodToTimeRange": true,
+                "sparkline": false,
+                "trend": false,
+                "title": "ECS - Card CRUD APIs - CPUUtilization"
+            }
+        },
+        {
+            "height": 5,
+            "width": 8,
+            "y": 2,
+            "x": 7,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/ApiGateway",
+                        "Latency",
+                        "ApiName",
+                        "friends-capstone-infra-s3-images-api-gateway",
+                        {
+                            "region": "us-west-2",
+                            "label": "API Gateway Latency",
+                            "color": "#ff7f0e"
+                        }
+                    ],
+                    [
+                        ".",
+                        "Count",
+                        ".",
+                        ".",
+                        {
+                            "visible": false,
+                            "region": "us-west-2"
+                        }
+                    ]
+                ],
+                "view": "gauge",
+                "region": "us-west-2",
+                "yAxis": {
+                    "left": {
+                        "min": 0,
+                        "max": 1000
+                    }
+                },
+                "stat": "Average",
+                "period": 300,
+                "title": "API Gateway - Upload Images Latency",
+                "start": "-PT1008H",
+                "end": "P0D"
+            }
+        },
+        {
+            "height": 4,
+            "width": 17,
+            "y": 20,
+            "x": 0,
+            "type": "log",
+            "properties": {
+                "query": "SOURCE '/ecs/friends-capstone-thumbnails-api-ecs-task' | fields @timestamp, @message, @log\n| sort @timestamp desc\n| limit 35",
+                "region": "us-west-2",
+                "stacked": false,
+                "title": "Logs - ECS",
+                "view": "table"
+            }
+        },
+        {
+            "height": 8,
+            "width": 4,
+            "y": 12,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/WAFV2",
+                        "AllowedRequests",
+                        "WebACL",
+                        "friends-capstone-regional-web-acl",
+                        "Device",
+                        "Desktop",
+                        "Region",
+                        "us-west-2",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ],
+                    [
+                        ".",
+                        "BlockedRequests",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ],
+                    [
+                        ".",
+                        "CaptchaRequests",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ]
+                ],
+                "view": "singleValue",
+                "stacked": false,
+                "region": "us-west-2",
+                "period": 86400,
+                "stat": "Sum",
+                "start": "-PT1008H",
+                "end": "P0D",
+                "singleValueFullPrecision": true,
+                "setPeriodToTimeRange": false,
+                "sparkline": false,
+                "trend": true,
+                "title": "WAF - Allowed, Blocked & Captcha Requests"
+            }
+        },
+        {
+            "height": 8,
+            "width": 11,
+            "y": 12,
+            "x": 4,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/WAFV2",
+                        "CaptchaRequests",
+                        "WebACL",
+                        "friends-capstone-regional-web-acl",
+                        "Region",
+                        "us-west-2",
+                        "Rule",
+                        "api-gateway-captcha-rule-CONTENT-TYPE-IMAGE",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ],
+                    [
+                        ".",
+                        "AllowedRequests",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        "api-gateway-captcha-rule",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ],
+                    [
+                        ".",
+                        "CaptchaRequests",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        "api-gateway-upload-images-put-method",
+                        {
+                            "region": "us-west-2"
+                        }
+                    ]
+                ],
+                "sparkline": true,
+                "view": "bar",
+                "region": "us-west-2",
+                "start": "-PT1008H",
+                "end": "P0D",
+                "stat": "Sum",
+                "period": 21600,
+                "stacked": true,
+                "singleValueFullPrecision": false,
+                "table": {
+                    "stickySummary": false,
+                    "summaryColumns": [
+                        "SUM",
+                        "AVG"
+                    ]
+                },
+                "yAxis": {
+                    "left": {
+                        "showUnits": true
+                    },
+                    "right": {
+                        "showUnits": true
+                    }
+                },
+                "setPeriodToTimeRange": true,
+                "title": "WAF - Average Allowed, Blocked & Captcha Requests"
+            }
+        },
+        {
+            "height": 5,
+            "width": 8,
+            "y": 12,
+            "x": 15,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "ReadLatency"
+                    ],
+                    [
+                        ".",
+                        "WriteLatency"
+                    ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "us-west-2",
+                "start": "-PT1008H",
+                "end": "P0D",
+                "yAxis": {
+                    "left": {
+                        "showUnits": true
+                    }
+                },
+                "period": 86400,
+                "stat": "Average",
+                "title": "RDS - Latency"
+            }
+        },
+        {
+            "height": 5,
+            "width": 8,
+            "y": 7,
+            "x": 15,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "CPUUtilization",
+                        "DBInstanceIdentifier",
+                        "friendscapstonerds",
+                        {
+                            "region": "us-west-2",
+                            "color": "#2ca02c"
+                        }
+                    ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "us-west-2",
+                "stat": "Average",
+                "period": 86400,
+                "title": "RDS CPU Utilisation"
+            }
+        },
+        {
+            "height": 5,
+            "width": 8,
+            "y": 7,
+            "x": 7,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/ApiGateway",
+                        "Latency",
+                        "ApiName",
+                        "friends-capstone-infra-s3-images-api-gateway",
+                        {
+                            "region": "us-west-2",
+                            "label": "API Gateway Latency",
+                            "color": "#ff7f0e"
+                        }
+                    ],
+                    [
+                        ".",
+                        "Count",
+                        ".",
+                        ".",
+                        {
+                            "visible": false,
+                            "region": "us-west-2"
+                        }
+                    ]
+                ],
+                "view": "timeSeries",
+                "region": "us-west-2",
+                "yAxis": {
+                    "left": {
+                        "min": 0,
+                        "max": 1000
+                    }
+                },
+                "stat": "Average",
+                "period": 86400,
+                "title": "API Gateway - Upload Images Latency",
+                "start": "-PT1008H",
+                "end": "P0D",
+                "stacked": false
+            }
+        },
+        {
+            "height": 5,
+            "width": 8,
+            "y": 2,
+            "x": 15,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/RDS",
+                        "CPUUtilization",
+                        "DBInstanceIdentifier",
+                        "friendscapstonerds",
+                        {
+                            "region": "us-west-2",
+                            "color": "#2ca02c"
+                        }
+                    ]
+                ],
+                "view": "gauge",
+                "stacked": false,
+                "region": "us-west-2",
+                "stat": "Average",
+                "period": 86400,
+                "title": "RDS CPU Utilisation",
+                "yAxis": {
+                    "left": {
+                        "min": 0,
+                        "max": 100
+                    }
+                }
+            }
+        },
+        {
+            "height": 5,
+            "width": 7,
+            "y": 7,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [
+                        "AWS/ECS",
+                        "CPUUtilization",
+                        "ServiceName",
+                        "friends-capstone-crud-api-service",
+                        "ClusterName",
+                        "friends-capstone-cluster",
+                        {
+                            "region": "us-west-2",
+                            "color": "#9467bd"
+                        }
+                    ],
+                    [
+                        ".",
+                        "MemoryUtilization",
+                        ".",
+                        ".",
+                        ".",
+                        ".",
+                        {
+                            "region": "us-west-2",
+                            "period": 21600
+                        }
+                    ]
+                ],
+                "view": "timeSeries",
+                "region": "us-west-2",
+                "stat": "Average",
+                "period": 86400,
+                "start": "-PT1008H",
+                "end": "P0D",
+                "yAxis": {
+                    "left": {
+                        "max": 0.05,
+                        "min": 0
+                    }
+                },
+                "legend": {
+                    "position": "bottom"
+                },
+                "liveData": false,
+                "setPeriodToTimeRange": true,
+                "sparkline": false,
+                "trend": false,
+                "title": "ECS - Card CRUD APIs - CPUUtilization",
+                "stacked": false
+            }
+        },
+        {
+            "height": 3,
+            "width": 8,
+            "y": 17,
+            "x": 15,
+            "type": "log",
+            "properties": {
+                "query": "SOURCE '/ecs/friends-capstone-cluster/friends-capstone-crud-api-service' | SOURCE '/ecs/friends-capstone-thumbnails-api-ecs-task' | fields @timestamp, @message, @logStream, @log\n| filter @message like /(?i)Can't connect to MySQL server/ \n| sort @timestamp asc\n| stats count() by bin(1h)\n| limit 10000",
+                "region": "us-west-2",
+                "stacked": false,
+                "title": "RDS - CardDB - ConnectionErrors Count",
+                "view": "bar"
+            }
+        },
+        {
+            "height": 5,
+            "width": 23,
+            "y": 24,
+            "x": 0,
+            "type": "log",
+            "properties": {
+                "query": "SOURCE '/aws/lambda/friends-capstone-ecs-shared-alb-forward-logs' | fields @timestamp, @message, @log\n| sort @timestamp desc\n| limit 30",
+                "region": "us-west-2",
+                "stacked": false,
+                "view": "table",
+                "title": "Logs - Lambda"
+            }
+        },
+        {
+            "height": 4,
+            "width": 6,
+            "y": 20,
+            "x": 17,
+            "type": "alarm",
+            "properties": {
+                "title": "Alarms",
+                "alarms": [
+                    "arn:aws:cloudwatch:us-west-2:255945442255:alarm:AWSResilienceHub-LambdaErrorsAlarm-2020-07-13_friends-capstone-resilience-hub_arn-aws-lambda-us-west-2-255945442255-function-friends-capstone-ecs-shared-alb-forward-logs",
+                    "arn:aws:cloudwatch:us-west-2:255945442255:alarm:AWSResilienceHub-LambdaThrottlesAlarm-2020-07-13_friends-capstone-resilience-hub_arn-aws-lambda-us-west-2-255945442255-function-friends-capstone-ecs-shared-alb-forward-logs",
+                    "arn:aws:cloudwatch:us-west-2:255945442255:alarm:AWSResilienceHub-ApplicationLoadBalancerElbHttp5xxCountAlarm-2020-04-01_friends-capstone-resilience-hub_arn-aws-elasticloadbalancing-us-west-2-255945442255-loadbalancer-app-friends-capstone-ecs-shared-alb-c1e262c436e26421",
+                    "arn:aws:cloudwatch:us-west-2:255945442255:alarm:AWSResilienceHub-ApplicationLoadBalancerHealthyHostCountAlarm-2020-04-01_friends-capstone-resilience-hub_friends-capstone-crud-api-tg",
+                    "arn:aws:cloudwatch:us-west-2:255945442255:alarm:AWSResilienceHub-ApplicationLoadBalancerUnHealthyHostCountAlarm-2020-04-01_friends-capstone-resilience-hub_friends-capstone-crud-api-tg",
+                    "arn:aws:cloudwatch:us-west-2:255945442255:alarm:AWSResilienceHub-ApplicationLoadBalancerRejectedConnectionsCountAlarm-2020-04-01_friends-capstone-resilience-hub_arn-aws-elasticloadbalancing-us-west-2-255945442255-loadbalancer-app-friends-capstone-ecs-shared-alb-c1e262c436e26421",
+                    "arn:aws:cloudwatch:us-west-2:255945442255:alarm:AWSResilienceHub-ApplicationLoadBalancerTargetHttp5xxCountAlarm-2020-04-01_friends-capstone-resilience-hub_arn-aws-elasticloadbalancing-us-west-2-255945442255-loadbalancer-app-friends-capstone-ecs-shared-alb-c1e262c436e26421",
+                    "arn:aws:cloudwatch:us-west-2:255945442255:alarm:AWSResilienceHub-ApplicationLoadBalancerElbHttp4xxCountAlarm-2020-04-01_friends-capstone-resilience-hub_arn-aws-elasticloadbalancing-us-west-2-255945442255-loadbalancer-app-friends-capstone-ecs-shared-alb-c1e262c436e26421",
+                    "arn:aws:cloudwatch:us-west-2:255945442255:alarm:AWSResilienceHub-LambdaAnomalousInvocationCountAlarm-2020-07-13_friends-capstone-resilience-hub_arn-aws-lambda-us-west-2-255945442255-function-friends-capstone-ecs-shared-alb-forward-logs",
+                    "arn:aws:cloudwatch:us-west-2:255945442255:alarm:AWSResilienceHub-LambdaAnomalousDurationCountAlarm-2020-04-01_friends-capstone-resilience-hub_arn-aws-lambda-us-west-2-255945442255-function-friends-capstone-ecs-shared-alb-forward-logs",
+                    "arn:aws:cloudwatch:us-west-2:255945442255:alarm:AWSResilienceHub-LambdaAnomalousMemorySoftLimitAlarm-2020-04-01_friends-capstone-resilience-hub_arn-aws-lambda-us-west-2-255945442255-function-friends-capstone-ecs-shared-alb-forward-logs",
+                    "arn:aws:cloudwatch:us-west-2:255945442255:alarm:AWSResilienceHub-LambdaAnomalousMemoryDeviationsAlarm-2020-04-01_friends-capstone-resilience-hub_arn-aws-lambda-us-west-2-255945442255-function-friends-capstone-ecs-shared-alb-forward-logs",
+                    "arn:aws:cloudwatch:us-west-2:255945442255:alarm:friends-capstone-summary-RDS-CPUUtilization",
+                    "arn:aws:cloudwatch:us-west-2:255945442255:alarm:friends-capstone-summary-WAF-BlockedRequests",
+                    "arn:aws:cloudwatch:us-west-2:255945442255:alarm:friends-capstone-summary-ECS-Card CRUD APIs-MemoryUtilization",
+                    "arn:aws:cloudwatch:us-west-2:255945442255:alarm:friends-capstone-summary-ECS-Card CRUD APIs-CPUUtilization"
+                ]
+            }
+        },
+        {
+            "height": 2,
+            "width": 23,
+            "y": 0,
+            "x": 0,
+            "type": "text",
+            "properties": {
+                "markdown": "## Group 4 Capstone SRE Project\n[button:primary:Website](https://goodgreets.sctp-sandbox.com/) \nStephanie Wong, Nicholas Tang, Justin Lim, Chee Meng Low",
+                "background": "solid"
+            }
+        }
+    ]
+}

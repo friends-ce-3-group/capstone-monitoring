@@ -1,0 +1,356 @@
+{
+    "widgets": [
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 0,
+            "width": 8,
+            "height": 4,
+            "properties": {
+                "metrics": [
+                    [
+                        {
+                            "id": "expr1m0",
+                            "label": "friends-capstone-cluster",
+                            "expression": "mm1m0 * 100 / mm0m0"
+                        }
+                    ],
+                    [
+                        "ECS/ContainerInsights",
+                        "CpuReserved",
+                        "ClusterName",
+                        "friends-capstone-cluster",
+                        {
+                            "period": 300,
+                            "stat": "Sum",
+                            "id": "mm0m0",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "CpuUtilized",
+                        ".",
+                        ".",
+                        {
+                            "period": 300,
+                            "stat": "Sum",
+                            "id": "mm1m0",
+                            "visible": false
+                        }
+                    ]
+                ],
+                "legend": {
+                    "position": "bottom"
+                },
+                "title": "CPU Utilization",
+                "yAxis": {
+                    "left": {
+                        "min": 0,
+                        "showUnits": false,
+                        "label": "Percent"
+                    }
+                },
+                "region": "us-west-2",
+                "liveData": false,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "type": "metric",
+            "x": 8,
+            "y": 0,
+            "width": 8,
+            "height": 4,
+            "properties": {
+                "metrics": [
+                    [
+                        {
+                            "id": "expr1m0",
+                            "label": "friends-capstone-cluster",
+                            "expression": "mm1m0 * 100 / mm0m0"
+                        }
+                    ],
+                    [
+                        "ECS/ContainerInsights",
+                        "MemoryReserved",
+                        "ClusterName",
+                        "friends-capstone-cluster",
+                        {
+                            "period": 300,
+                            "stat": "Sum",
+                            "id": "mm0m0",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "MemoryUtilized",
+                        ".",
+                        ".",
+                        {
+                            "period": 300,
+                            "stat": "Sum",
+                            "id": "mm1m0",
+                            "visible": false
+                        }
+                    ]
+                ],
+                "legend": {
+                    "position": "bottom"
+                },
+                "title": "Memory Utilization",
+                "yAxis": {
+                    "left": {
+                        "min": 0,
+                        "showUnits": false,
+                        "label": "Percent"
+                    }
+                },
+                "region": "us-west-2",
+                "liveData": false,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "type": "metric",
+            "x": 16,
+            "y": 0,
+            "width": 8,
+            "height": 4,
+            "properties": {
+                "metrics": [
+                    [
+                        {
+                            "id": "expr1m0",
+                            "label": "friends-capstone-cluster",
+                            "expression": "mm1m0 * 100 / mm0m0"
+                        }
+                    ],
+                    [
+                        "ECS/ContainerInsights",
+                        "EphemeralStorageReserved",
+                        "ClusterName",
+                        "friends-capstone-cluster",
+                        {
+                            "period": 300,
+                            "stat": "Sum",
+                            "id": "mm0m0",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "EphemeralStorageUtilized",
+                        ".",
+                        ".",
+                        {
+                            "period": 300,
+                            "stat": "Sum",
+                            "id": "mm1m0",
+                            "visible": false
+                        }
+                    ]
+                ],
+                "legend": {
+                    "position": "bottom"
+                },
+                "title": "Disk Utilization",
+                "yAxis": {
+                    "left": {
+                        "min": 0,
+                        "showUnits": false,
+                        "label": "Percent"
+                    }
+                },
+                "region": "us-west-2",
+                "liveData": false,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 4,
+            "width": 6,
+            "height": 4,
+            "properties": {
+                "metrics": [
+                    [
+                        {
+                            "id": "expr1m0",
+                            "label": "friends-capstone-cluster",
+                            "expression": "mm0m0 + mm1m0"
+                        }
+                    ],
+                    [
+                        "ECS/ContainerInsights",
+                        "NetworkRxBytes",
+                        "ClusterName",
+                        "friends-capstone-cluster",
+                        {
+                            "period": 300,
+                            "stat": "Average",
+                            "id": "mm0m0",
+                            "visible": false
+                        }
+                    ],
+                    [
+                        ".",
+                        "NetworkTxBytes",
+                        ".",
+                        ".",
+                        {
+                            "period": 300,
+                            "stat": "Average",
+                            "id": "mm1m0",
+                            "visible": false
+                        }
+                    ]
+                ],
+                "legend": {
+                    "position": "bottom"
+                },
+                "title": "Network",
+                "yAxis": {
+                    "left": {
+                        "showUnits": false,
+                        "label": "Bytes/Second"
+                    }
+                },
+                "region": "us-west-2",
+                "liveData": false,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "type": "metric",
+            "x": 6,
+            "y": 4,
+            "width": 6,
+            "height": 4,
+            "properties": {
+                "metrics": [
+                    [
+                        {
+                            "id": "expr1m0",
+                            "label": "friends-capstone-cluster",
+                            "expression": "mm0m0"
+                        }
+                    ],
+                    [
+                        "ECS/ContainerInsights",
+                        "ContainerInstanceCount",
+                        "ClusterName",
+                        "friends-capstone-cluster",
+                        {
+                            "period": 300,
+                            "stat": "Average",
+                            "id": "mm0m0",
+                            "visible": false
+                        }
+                    ]
+                ],
+                "legend": {
+                    "position": "bottom"
+                },
+                "title": "Container Instance Count",
+                "yAxis": {
+                    "left": {
+                        "showUnits": false,
+                        "label": "Count"
+                    }
+                },
+                "region": "us-west-2",
+                "liveData": false,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "type": "metric",
+            "x": 12,
+            "y": 4,
+            "width": 6,
+            "height": 4,
+            "properties": {
+                "metrics": [
+                    [
+                        {
+                            "id": "expr1m0",
+                            "label": "friends-capstone-cluster",
+                            "expression": "mm0m0"
+                        }
+                    ],
+                    [
+                        "ECS/ContainerInsights",
+                        "TaskCount",
+                        "ClusterName",
+                        "friends-capstone-cluster",
+                        {
+                            "period": 300,
+                            "stat": "Average",
+                            "id": "mm0m0",
+                            "visible": false
+                        }
+                    ]
+                ],
+                "legend": {
+                    "position": "bottom"
+                },
+                "title": "Task Count",
+                "yAxis": {
+                    "left": {
+                        "showUnits": false,
+                        "label": "Count"
+                    }
+                },
+                "region": "us-west-2",
+                "liveData": false,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "type": "metric",
+            "x": 18,
+            "y": 4,
+            "width": 6,
+            "height": 4,
+            "properties": {
+                "metrics": [
+                    [
+                        {
+                            "id": "expr1m0",
+                            "label": "friends-capstone-cluster",
+                            "expression": "mm0m0"
+                        }
+                    ],
+                    [
+                        "ECS/ContainerInsights",
+                        "ServiceCount",
+                        "ClusterName",
+                        "friends-capstone-cluster",
+                        {
+                            "period": 300,
+                            "stat": "Average",
+                            "id": "mm0m0",
+                            "visible": false
+                        }
+                    ]
+                ],
+                "legend": {
+                    "position": "bottom"
+                },
+                "title": "Service Count",
+                "yAxis": {
+                    "left": {
+                        "showUnits": false,
+                        "label": "Count"
+                    }
+                },
+                "region": "us-west-2",
+                "liveData": false,
+                "timezone": "UTC"
+            }
+        }
+    ]
+}

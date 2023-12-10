@@ -7,6 +7,7 @@ dashboards=(
     friends-capstone-APIGateway-Thumbnail
     friends-capstone-summary-dashboard
     friends-capstone-ecs
+    friends-capstone-ecs-prometheus
 )
 for dash in "${dashboards[@]}"
 do
